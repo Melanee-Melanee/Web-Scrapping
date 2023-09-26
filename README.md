@@ -1,3 +1,3 @@
 # Web-Scrapping
-via Selenium
+via Selenium, beautiful soup and ...
 
