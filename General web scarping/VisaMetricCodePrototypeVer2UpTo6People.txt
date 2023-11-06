@@ -1,0 +1,329 @@
+﻿//===============================================
+// GET CITY OPTIONS LENGHT
+//===============================================
+function getOptionsLength(elementName) {
+     
+     let cityOptions = document.getElementById(elementName);
+     return cityOptions.length;
+ }
+ 
+
+//===============================================
+// FILL CITIES OPTIONS
+//===============================================
+function fillCitiesOption() {
+
+            console.log("SCRIPT ===> Creating City List");
+            
+            let cityList = [
+            { "cityValue": "6", "cityName": "اراک" },
+            { "cityValue": "7", "cityName": "اردبیل" },
+            { "cityValue": "8", "cityName": "ارومیه" },
+            { "cityValue": "2", "cityName": "اصفهان" },
+            { "cityValue": "9", "cityName": "اهواز" },
+            { "cityValue": "10", "cityName": "ایلام" },
+            { "cityValue": "11", "cityName": "بجنورد" },
+            { "cityValue": "12", "cityName": "بندرعباس" },
+            { "cityValue": "13", "cityName": "بوشهر" },
+            { "cityValue": "14", "cityName": "بیرجند" },
+            { "cityValue": "3", "cityName": "تبریز" },
+            { "cityValue": "1", "cityName": "تهران" },
+            { "cityValue": "15", "cityName": "خرم آباد" },
+            { "cityValue": "16", "cityName": "رشت" },
+            { "cityValue": "17", "cityName": "زاهدان" },
+            { "cityValue": "18", "cityName": "زنجان" },
+            { "cityValue": "19", "cityName": "ساری" },
+            { "cityValue": "20", "cityName": "سمنان" },
+            { "cityValue": "21", "cityName": "سنندج" },
+            { "cityValue": "22", "cityName": "شهرکرد" },
+            { "cityValue": "5", "cityName": "شیراز" },
+            { "cityValue": "23", "cityName": "قزوین" },
+            { "cityValue": "24", "cityName": "قم" },
+            { "cityValue": "25", "cityName": "کرج" },
+            { "cityValue": "26", "cityName": "کرمان" },
+            { "cityValue": "27", "cityName": "کرمانشاه" },
+            { "cityValue": "28", "cityName": "گرگان" },
+            { "cityValue": "4", "cityName": "مشهد" },
+            { "cityValue": "29", "cityName": "همدان " },
+            { "cityValue": "30", "cityName": "یاسوج " },
+            { "cityValue": "31", "cityName": "یزد" },
+        ];
+    
+    
+    let cityOptionsSelect = document.getElementById("city"),
+        option,
+        cityListLength = cityList.length;
+
+    // insert city values
+    for (let i = 0; i < cityListLength; i += 1) {
+        option = document.createElement('option');
+        option.setAttribute('value', cityList[i].cityValue);
+        option.appendChild(document.createTextNode(cityList[i].cityName));
+        cityOptionsSelect.appendChild(option);
+    }
+
+    // wait 5 seconds, so city list could be selected after being created
+    setTimeout(function(){
+        console.log("SCRIPT ===> City List Created Successfully! City List Length Now: ", getOptionsLength("city"));
+        }, 5000);
+
+}
+
+//===============================================
+// FILL OFFICE OPTIONS
+//===============================================
+function fillOfficeOptionValues() {
+    
+    
+    
+    let officeList = [
+            { "officeValue": "1", "officeName": "تهران" },
+        ];
+
+    let officeSelect = document.getElementById("office"),
+        officeOption,
+        officeListLenght = officeList.length;
+
+    for (let i = 0; i < officeListLenght; i += 1) {
+        officeOption = document.createElement('option');
+        officeOption.setAttribute('value', officeList[i].officeValue);
+        officeOption.appendChild(document.createTextNode(officeList[i].officeName));
+        officeSelect.appendChild(officeOption);
+    }
+    
+    console.log("SCRIPT ===> Office List Created Successfully! Office List Length Now: ", getOptionsLength("office"));
+    
+        // wait 5 seconds, so city list could be selected after being created
+    // setTimeout(function(){
+    //     console.log("SCRIPT ===> Office Created Successfully! Office List Length Now: ", getOptionsLength("office"));
+    //     }, 5000);
+}
+
+//===============================================
+// FILL OFFICE TYPE OPTIONS
+//===============================================
+function fillOfficeTypeOptionValues() {
+     // // office type select
+
+    let officeTypeList = [
+            { "officeValue": "1", "officeName": "عادی" },
+            { "officeValue": "2", "officeName": "اختصاصی"},
+        ];
+
+    let officeTypeSelect = document.getElementById("officetype"),
+        officeTypeOption,
+        officeTypeListLenght = officeTypeList.length;
+
+    for (let i = 0; i < officeTypeListLenght; i += 1) {
+        officeTypeOption = document.createElement('option');
+        officeTypeOption.setAttribute('value', officeTypeList[i].officeValue);
+        officeTypeOption.appendChild(document.createTextNode(officeTypeList[i].officeName));
+        officeTypeSelect.appendChild(officeTypeOption);
+    }
+    
+    console.log("SCRIPT ===> Office Type List Created Successfully! Office Type List Length Now: ", getOptionsLength("officetype"));
+    
+        // wait 5 seconds, so office list could be selected after being created
+    // setTimeout(function(){
+    //     console.log("SCRIPT ===> Office Type Created Successfully! Office Type List Length Now: ", getOptionsLength("officetype"));
+    //     }, 5000);
+}
+ 
+//===============================================
+// APPLY VISA METRIC
+//===============================================
+function applyVisaMetric() {
+ 
+    console.log("SCRIPT ===> Applying To VisaMetric");
+    
+// این کد کوتاه جهت تکرار اتوماتیک درخواست ها در هنگام شلوغی سایت اضافه شده این قسمت را ویرایش نکنید
+    var live_in_europe = $.ajax
+
+    $.ajax = function(setting) {
+
+        setting.error = function() {
+            setTimeout(() => {
+                console.log("SCRIPT ===> Retrying Request")
+                live_in_europe(setting)
+            }, 10000)
+    }
+
+    live_in_europe(setting)
+    }
+
+// از اینجا اطلاعات خود را وارد کنید
+// این قسمت اول اطلاعات در ویدیوی آموزشی با استفاده از سایت پر میشود
+// شماره شهر در لیست شهر ها
+
+
+    $("#city").val(2);
+    $("#city").change();
+
+// شماره مرکز دریافت مدارک در لیست
+    $("#office").val(1);
+    $("#office").change();
+
+// شماره نوع خدمات در لیست
+    $("#officetype").val(1);
+    $("#officetype").change();
+
+// تعداد متقاضیان
+    $("#totalPerson").val(1);
+    $("#totalPerson").change();
+
+
+
+// این قسمت دوم مربوط به اطلاعات پرداخت بانکی است
+    
+    // دوستان یه راهی بهتون میگم که ۳۰ ثانیه کارتون جلو می افته!!!
+    // قسمتی که باید زیر شهر تون نوع پرداخت رو انتخاب کنید.
+    // اول از طریق گزینه کارت و موبایل بانک transaction id تون رو پیدا کنید که توی دفعات بعدی از
+    // طریق گزینه حواله بانکی جلو برید. دقیقا وقتی دارید تو قسمت شهر تیک دوم شماره حساب رو می زنید
+    // بقلش یه شماره هست که همین transaction id ه. یکم خوب نگاه کنید می بینید ش.
+
+    // حالا تنها کافی وقتی گزینه حواله بانکی رو انتخاب می کنید. همین شماره transaction id رو توی 
+    // جای خالی حواله بانکی بزنید و خب تاریخ هم که همون تاریخ قبلی هست.
+    // اینطوری دیگه خیلی سریع می‌ره قسمت پاسپورت و دیگه لازم نیست کار دیگه ای بکنید.
+    // وقتی سایت شلوغ میشه خود همین مرحله ۳۰ ثانیه طول می کشه و خب اینطوری جلو می افتید و خب ۳۰ ثانیه هم ۳۰ ثانیه ست
+    
+// پرداخت با کارت
+
+// شماره کارت و مبایل بانک 
+    // $('#paymentCardInput').val('12345678064288333');
+
+// تاریخ پرداخت  کارت و مبایل بانک 
+    // $('#popupDatepicker2').val('1402/03/18');
+    
+    // شماره حواله بانکی
+    $('#transactionid').val('12345678');
+    
+    // تاریخ حواله بانکی
+    $('#popupDatepicker').val('1402/03/18');
+    
+
+
+
+// این قسمت سوم مربوط اطلاعات شخصی است
+// شماره شبا
+    
+// این قسمت سوم مربوط اطلاعات شخصی است
+// شماره شبا
+$("#scheba_number").val('IR123456789012345678901234');
+
+// نام و نام خانوادگی صاحب شبا به فارسی
+$('#scheba_name').val('حسن کچلبلادیده');
+
+// Name
+$('#name1').val('HASAN');
+
+// Surname
+$('#surname1').val('KACHALBALAHDIDEH');
+
+// تاریخ تولد در سه قسمت زیر
+$('#birthyear1').val('2023');
+$('#birthmonth1').val('01');
+$('#birthday1').val('01');
+
+// شماره پاسپورت
+$('#passport1').val('M12345678');
+
+// شماره تلفن اول
+$('#phone1').val('09123456789');
+
+// شماره تلفن دوم
+$('#phone21').val('09123456789');
+
+// آدرس ایمیل
+$('#email1').val('hasan_kachal@hotmail.com');
+
+
+
+// در صورتی که برای دو نفر وقت میگیرید اطلاعات نفر دوم
+$('#name2').val('name person2');
+$('#surname2').val('surname');
+$('#birthyear2').val('1958');
+$('#birthmonth2').val('11');
+$('#birthday2').val('16');
+$('#passport2').val('passno');
+$('#phone2').val('0912...9');
+$('#phone22').val('0912....29');
+$('#email2').val('...@gmail.com');
+
+// در صورتی که برای سه نفر وقت میگیرید اطلاعات نفر سوم
+$('#name3').val('name person3');
+$('#surname3').val('surname');
+$('#birthyear3').val('1958');
+$('#birthmonth3').val('11');
+$('#birthday3').val('16');
+$('#passport3').val('passno');
+$('#phone3').val('0912...9');
+$('#phone23').val('0912....29');
+$('#email3').val('...@gmail.com');
+
+// در صورتی که برای چهار نفر وقت میگیرید اطلاعات نفر چهارم
+$('#name4').val('name person4');
+$('#surname4').val('surname');
+$('#birthyear4').val('1958');
+$('#birthmonth4').val('11');
+$('#birthday4').val('16');
+$('#passport4').val('passno');
+$('#phone4').val('0912...9');
+$('#phone24').val('0912....29');
+$('#email4').val('...@gmail.com');
+
+// در صورتی که برای پنج نفر وقت میگیرید اطلاعات نفر پنجم
+$('#name5').val('name person5');
+$('#surname5').val('surname');
+$('#birthyear5').val('1958');
+$('#birthmonth5').val('11');
+$('#birthday5').val('16');
+$('#passport5').val('passno');
+$('#phone5').val('0912...9');
+$('#phone25').val('0912....29');
+$('#email5').val('...@gmail.com');
+
+// در صورتی که برای شش نفر وقت میگیرید اطلاعات نفر ششم
+$('#name6').val('name person6');
+$('#surname6').val('surname');
+$('#birthyear6').val('1958');
+$('#birthmonth6').val('11');
+$('#birthday6').val('16');
+$('#passport6').val('passno');
+$('#phone6').val('0912...9');
+$('#phone26').val('0912....29');
+$('#email6').val('...@gmail.com');
+
+
+
+}
+
+
+//===============================================
+// START
+//===============================================
+function Start() {
+    
+   if( getOptionsLength("city") === 0 ||  getOptionsLength("city") === 1) {
+        console.log("SCRIPT ===> City List Does not Exist!");
+        fillCitiesOption();
+    }
+    // if( getOptionsLength("office") === 0 ||  getOptionsLength("office") === 1) {
+    //     console.log("SCRIPT ===> Office List Does not Exist!");
+    //     fillOfficeOptionValues();
+    // }
+    // if( getOptionsLength("officetype") === 0 ||  getOptionsLength("officetype") === 1) {
+    //     console.log("SCRIPT ===> Office Type List Does not Exist!");
+    //     fillOfficeTypeOptionValues();
+    // }
+   
+    applyVisaMetric();
+    
+
+}
+
+
+//===============================================
+// EXECUTE THE PROGRAM
+//===============================================
+Start();
+
